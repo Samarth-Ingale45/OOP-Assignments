@@ -1,0 +1,64 @@
+#include <iostream>
+using namespace std;
+
+class Vehicle {
+public:
+    string id;
+    string model;
+
+    void getCommon() {
+        cout << "Enter Vehicle ID and Model: ";
+        cin >> id >> model;
+    }
+
+    void showCommon() {
+        cout << "ID: " << id << "\nModel: " << model << endl;
+    }
+};
+
+class Car : public Vehicle {
+public:
+    int seats;
+
+    void getCar() {
+        cout << "Enter Seats: ";
+        cin >> seats;
+    }
+
+    void showCar() {
+        cout << "Seats: " << seats << endl;
+    }
+};
+
+class Truck : public Vehicle {
+public:
+    float capacity;
+
+    void getTruck() {
+        cout << "Enter Cargo Capacity (tons): ";
+        cin >> capacity;
+    }
+
+    void showTruck() {
+        cout << "Capacity: " << capacity << " tons" << endl;
+    }
+};
+
+int main() {
+    Car c;
+    Truck t;
+
+    cout << "--- Enter Car Details ---\n";
+    c.getCommon();
+    c.getCar();
+    c.showCommon();
+    c.showCar();
+
+    cout << "\n--- Enter Truck Details ---\n";
+    t.getCommon();
+    t.getTruck();
+    t.showCommon();
+    t.showTruck();
+
+    return 0;
+}
